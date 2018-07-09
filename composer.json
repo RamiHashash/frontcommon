@@ -21,7 +21,7 @@
                 "name": "olahub/common-functions",
                 "version": "dev-master",
                 "source": {
-                    "url": "https://github.com/mohamedElabsy/besoooCommonFunctions.git",
+                    "url": "https://github.com/mohamedElabsy/frontcommon",
                     "type": "git",
                     "reference": "origin/master"
                 }
