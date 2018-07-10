@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\UserPortal\Exceptions;
+namespace OlaHub\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

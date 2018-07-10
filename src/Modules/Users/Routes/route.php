@@ -12,6 +12,5 @@
 $router->group([
     'prefix' => basename(strtolower(dirname(__DIR__)))
         ], function () use($router) {
-
-    $router->get('/', 'OlaHubAuthController@getAllPagination');
+    $router->post('/', 'OlaHubAuthController@getAllPagination');
 });
