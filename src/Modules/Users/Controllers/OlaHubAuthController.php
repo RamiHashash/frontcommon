@@ -23,7 +23,7 @@ class OlaHubAuthController extends BaseController {
      * @return Response
      */
     public function getAllPagination() {
-        dd($this->requestData);
+        dd("eslam");
         $return = $this->service->getPaginationCeriatria();
         if (array_key_exists('error', $return)) {
             Log::info('error: ' . json_encode($return['msg']));
