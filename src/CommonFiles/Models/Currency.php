@@ -1,8 +1,8 @@
 <?php
 
-namespace OlaHub\Models\ManyToMany;
+namespace OlaHub\Models;
 
-class State extends \OlaHub\Models\OlaHubCommonModels {
+class Currency extends \Illuminate\Database\Eloquent\Model {
 
     /**
      * The table associated with the model.
@@ -12,16 +12,20 @@ class State extends \OlaHub\Models\OlaHubCommonModels {
     public function __construct(array $attributes = array()) {
         parent::__construct($attributes);
     }
-    protected $table = 'states';
-    
+    protected $table = 'lkp_currencies';
 
-    static function preRequestData($countryID) {
+    
+    public function countries(){
+        return $this->hasMany('OlaHub\Models\Country', 'currency_id');
+    }
+    
+    static function preRequestData() {
         $return = [];
-        $data = State::where('country_id', $countryID)->get();
+        $data = Currency::all();
         foreach ($data as $one) {
             $return[] = [
                 'value' => $one->id,
-                'text' => \OlaHub\Helpers\OlaHubCommonHelper::returnCurrentLangField($one, 'name'),
+                'text' => $one->name,
             ];
         }
         return $return;

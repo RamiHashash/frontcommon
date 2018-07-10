@@ -114,14 +114,13 @@ abstract class OlaHubCommonHelper {
 
     static function setImageUrl($imageID) {
         $return = "N/A";
-        if(strlen($imageID) > 4){
+        if (strlen($imageID) > 4) {
             $return = url("images/$imageID");
-            
         }
         return $return;
     }
-    
-     static function setDefLang($country) {
+
+    static function setDefLang($country) {
         $countryCode = $country;
         if ($countryCode && $countryCode > 0) {
             $country = \OlaHub\Models\Country::find($countryCode);
@@ -136,16 +135,32 @@ abstract class OlaHubCommonHelper {
         }
         config(['def_lang' => $defLang]);
     }
-    
-    static function getDefineConst($constName, $constVal = 'false'){
-        if(defined($constName)){
-            if($constVal !== 'false'){
-                runkit_constant_redefine($constName,$constVal);
+
+    static function getDefineConst($constName, $constVal = 'false') {
+        if (defined($constName)) {
+            if ($constVal !== 'false') {
+                runkit_constant_redefine($constName, $constVal);
             }
-        }else{
+        } else {
             define($constName, $constVal);
         }
-        return constant('self::'. $constName);
+        return constant('self::' . $constName);
+    }
+
+    static function getRequest($request) {
+        $return = [
+            'requestData' => [],
+            'requestFilter' => [],
+        ];
+        if (env('REQUEST_TYPE') == 'postMan') {
+            $req = $request->all();
+            $return['requestData'] = isset($req['data']) ? $req['data'] : [];
+            $return['requestFilter'] = isset($req['filter']) ? $req['filter'] : [];
+        } else {
+            $return['requestData'] = $request->json('data');
+            $return['requestFilter'] = $request->json('filter');
+        }
+        return $return;
     }
 
 }
