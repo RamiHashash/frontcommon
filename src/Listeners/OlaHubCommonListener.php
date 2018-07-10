@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Listeners;
+namespace OlaHub\UserPortal\Listeners;
 
 use OlaHub\Events\OlaHubCommonEvent;
 

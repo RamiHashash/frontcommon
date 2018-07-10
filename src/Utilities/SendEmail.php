@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Libraries;
+namespace OlaHub\UserPortal\Libraries;
 
 use App\Mail\EmailFunction;
 use Illuminate\Support\Facades\Mail;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Middlewares;
+namespace OlaHub\UserPortal\Middlewares;
 
 use Closure;
 use OlaHub\Models\Country;

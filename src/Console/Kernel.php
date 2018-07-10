@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Console;
+namespace OlaHub\UserPortal\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;

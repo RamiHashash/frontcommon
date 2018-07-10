@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Jobs;
+namespace OlaHub\UserPortal\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;

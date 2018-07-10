@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Models;
+namespace OlaHub\UserPortal\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

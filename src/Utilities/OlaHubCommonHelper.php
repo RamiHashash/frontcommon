@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Helpers;
+namespace OlaHub\UserPortal\Helpers;
 
 use Stichoza\GoogleTranslate\TranslateClient;
 

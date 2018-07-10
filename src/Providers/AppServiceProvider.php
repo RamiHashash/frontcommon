@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Providers;
+namespace OlaHub\UserPortal\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use OlaHub\Models\OlaHubCommonModels;

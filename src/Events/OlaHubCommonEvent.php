@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Events;
+namespace OlaHub\UserPortal\Events;
 
 use Illuminate\Queue\SerializesModels;
 

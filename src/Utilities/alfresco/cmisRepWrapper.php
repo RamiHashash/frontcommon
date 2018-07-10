@@ -1,5 +1,5 @@
 <?php
-namespace OlaHub\Libraries;
+namespace OlaHub\UserPortal\Libraries;
 
 define("HTTP_OK", 200);
 define("HTTP_CREATED", 201);

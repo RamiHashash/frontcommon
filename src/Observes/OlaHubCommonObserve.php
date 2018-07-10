@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Observers;
+namespace OlaHub\UserPortal\Observers;
 
 use Illuminate\Database\Eloquent\Model as Model;
 

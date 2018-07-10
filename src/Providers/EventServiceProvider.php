@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Providers;
+namespace OlaHub\UserPortal\Providers;
 
 use Laravel\Lumen\Providers\EventServiceProvider as ServiceProvider;
 

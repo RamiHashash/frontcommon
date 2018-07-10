@@ -1,25 +1,25 @@
 <?php
 
-namespace OlaHub\Controllers;
+namespace OlaHub\UserPortal\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
+
 use Log;
 
-class OlaHubCommonController extends BaseController {
+class OlaHubAuthController extends BaseController {
 
-    protected $service;
+    protected $requestData;
+    protected $requestFilter;
 
-    public function __construct($request, $service) {
-        $countryHeader = $request->headers->get('country');
-        $this->service = new $service($countryHeader);
-        $this->service->countryHeader = $countryHeader;
+    public function __construct(Request $request) {
         if (env('REQUEST_TYPE') == 'postMan') {
             $req = $request->all();
-            $this->service->setRequestData(isset($req['data']) ? $req['data'] : []);
-            $this->service->setRequestFilter(isset($req['filter']) ? $req['filter'] : []);
+            $this->requestData = isset($req['data']) ? $req['data'] : [];
+            $this->requestFilter = isset($req['filter']) ? $req['filter'] : [];
         } else {
-            $this->service->setRequestData($request->json('data'));
-            $this->service->setRequestFilter($request->json('filter'));
+            $this->requestData = $request->json('data');
+            $this->requestFilter = $request->json('filter');
         }
     }
 

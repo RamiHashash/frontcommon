@@ -1,6 +1,6 @@
 <?php
 
-namespace OlaHub\Libraries;
+namespace OlaHub\UserPortal\Libraries;
 
 use OlaHub\Libraries\cmisRepWrapper;
 
